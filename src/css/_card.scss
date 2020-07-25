@@ -1,0 +1,100 @@
+.card_holder {
+  display: flex;
+}
+
+.card_header {
+  text-transform: capitalize;
+  color: $cardHheaderTextColor;
+  font-size: 11px;
+  margin-bottom: 35px;
+}
+
+.card_list {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 4fr 1.5fr 1fr;
+  grid-gap: 10px;
+  position: relative;
+}
+
+.card {
+    width: 100%;
+  border-right: 1px solid $borderColor;
+  padding: 0 35px;
+  &:first-child {
+    padding-left: 0px;
+    .score {
+      position: relative;
+      span {
+        &:first-child {
+          color: #2ed47a;
+          font-size: 56px;
+        }
+        &:nth-child(2) {
+          color: $errorColor;
+          font-size: 15px;
+          margin-left: 25px;
+          &::before {
+            @include triangle(40px, 130px, "down");
+          }
+        }
+      }
+    }
+    .card_list {
+      span {
+        @include textBlue;
+        &:first-child {
+          color: $errorColor;
+        }
+        &:nth-child(4) {
+          color: $warningColor;
+        }
+        &:nth-child(7) {
+          color: $noticeTextColor;
+        }
+      }
+    }
+  }
+  &:nth-child(2) {
+    @include textBlue;
+    @include torOpacity;
+  }
+  &:nth-child(4) {
+      border-right: none;
+      padding-right: 0;
+    @include textBlue;
+    @include torOpacity;
+  }
+}
+
+.before-wrapper {
+  position: relative;
+}
+
+.down {
+  color: $errorColor;
+  &::before {
+    @include triangle(4px, -12px, "down");
+  }
+}
+
+.tor {
+  &::before {
+    content: "";
+    height: 6px;
+    border-radius: 50%;
+
+    position: absolute;
+    box-sizing: border-box;
+    width: 6px;
+    top: 4px;
+    left: -10px;
+  }
+}
+
+.up {
+  color: $okColor;
+  &::before {
+    @include triangle(4px, -12px, "up");
+  }
+}

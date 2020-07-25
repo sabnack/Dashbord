@@ -1,59 +1,58 @@
-@mixin img($imgPath, $height, $width:$height) {
-    background-image: url("../images/btn/" + $imgPath + ".svg");
-    width: $width;
-    height: $height;
-    background-repeat: no-repeat;
-    background-size: cover;
+@mixin img($imgPath, $height, $width: $height) {
+  background-image: url("../images/btn/" + $imgPath + ".svg");
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .about {
-    width: 100%;
-    min-width: 250px;
-    background-color: $white;
-    border-radius: 5px;
-    padding: 30px;
-    &_header {
-        display: grid;
-        grid-template-columns: 25px 1fr repeat(3, 15px);
-        @include for-phone-portrait-up-small{
-            grid-template-columns: repeat(6, 25px);
-            -moz-column-gap: 10px;
-            column-gap: 10px;
-            row-gap: 10px;
-            .link{
-                grid-column-start: 2;
-                grid-column-end: 7;
-            }
-        }
-        column-gap: 10px;
-        >div {
-            @extend %flex_center;
-            >button {
-                background: $white;
-                border: none;
-                outline: 0;
-                @each $btn in $buttons {
-                    &[data-name="#{$btn}"] {
-                        @include img($btn,
-                        15px);
-                    }
-                }
-                &:hover {
-                    filter: sepia(70%);
-                }
-                &:active {
-                    filter: grayscale(1);
-                }
-            }
-        }
+  width: 100%;
+  min-width: 250px;
+  background-color: $white;
+  border-radius: 5px;
+  padding: 30px;
+  &_header {
+    display: grid;
+    grid-template-columns: 25px 1fr repeat(3, 15px);
+    @include for-phone-portrait-up-small {
+      grid-template-columns: repeat(6, 25px);
+      -moz-column-gap: 10px;
+      column-gap: 10px;
+      row-gap: 10px;
+      .link {
+        grid-column-start: 2;
+        grid-column-end: 7;
+      }
     }
+    column-gap: 10px;
+    > div {
+      @extend %flex_center;
+      > button {
+        background: $white;
+        border: none;
+        outline: 0;
+        @each $btn in $buttons {
+          &[data-name="#{$btn}"] {
+            @include img($btn, 15px);
+          }
+        }
+        &:hover {
+          filter: sepia(70%);
+        }
+        &:active {
+          filter: grayscale(1);
+        }
+      }
+    }
+  }
 }
 
 .link {
-    a {
-        text-decoration: none;
-        text-transform: initial;
-        color: black;
-        font-size: 15px;
-    }
+  a {
+    text-decoration: none;
+    text-transform: initial;
+    color: black;
+    font-size: 15px;
+  }
 }

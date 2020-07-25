@@ -21,6 +21,13 @@ textarea {
   text-transform: capitalize;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid #ebeff2;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .main_header {
   margin-top: 40px;
   margin-bottom: 20px;
@@ -187,6 +194,172 @@ textarea {
   text-transform: initial;
   color: black;
   font-size: 15px;
+}
+
+.card_holder {
+  display: flex;
+}
+
+.card_header {
+  text-transform: capitalize;
+  color: #818e9b;
+  font-size: 11px;
+  margin-bottom: 35px;
+}
+
+.card_list {
+  margin-top: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 1.5fr 1fr;
+      grid-template-columns: 4fr 1.5fr 1fr;
+  grid-gap: 10px;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  border-right: 1px solid #ebeff2;
+  padding: 0 35px;
+}
+
+.card:first-child {
+  padding-left: 0px;
+}
+
+.card:first-child .score {
+  position: relative;
+}
+
+.card:first-child .score span:first-child {
+  color: #2ed47a;
+  font-size: 56px;
+}
+
+.card:first-child .score span:nth-child(2) {
+  color: #dd4c3a;
+  font-size: 15px;
+  margin-left: 25px;
+}
+
+.card:first-child .score span:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 130px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 3.5px 0 3.5px;
+  border-color: #dd4c3a transparent transparent transparent;
+}
+
+.card:first-child .card_list span .card_list span:nth-child(3n + 2) {
+  color: #004bff;
+}
+
+.card:first-child .card_list span:first-child {
+  color: #dd4c3a;
+}
+
+.card:first-child .card_list span:nth-child(4) {
+  color: #f18f1c;
+}
+
+.card:first-child .card_list span:nth-child(7) {
+  color: #004bff;
+}
+
+.card:nth-child(2) .card_list span:nth-child(3n + 2) {
+  color: #004bff;
+}
+
+.card:nth-child(2) .card_list div:nth-child(1) > span::before {
+  border: 2px solid #0148f5;
+}
+
+.card:nth-child(2) .card_list div:nth-child(4) > span::before {
+  border: 2px solid rgba(1, 72, 245, 0.8);
+}
+
+.card:nth-child(2) .card_list div:nth-child(7) > span::before {
+  border: 2px solid rgba(1, 72, 245, 0.6);
+}
+
+.card:nth-child(2) .card_list div:nth-child(10) > span::before {
+  border: 2px solid rgba(1, 72, 245, 0.4);
+}
+
+.card:nth-child(4) {
+  border-right: none;
+  padding-right: 0;
+}
+
+.card:nth-child(4) .card_list span:nth-child(3n + 2) {
+  color: #004bff;
+}
+
+.card:nth-child(4) .card_list div:nth-child(1) > span::before {
+  border: 2px solid #0148f5;
+}
+
+.card:nth-child(4) .card_list div:nth-child(4) > span::before {
+  border: 2px solid rgba(1, 72, 245, 0.8);
+}
+
+.card:nth-child(4) .card_list div:nth-child(7) > span::before {
+  border: 2px solid rgba(1, 72, 245, 0.6);
+}
+
+.card:nth-child(4) .card_list div:nth-child(10) > span::before {
+  border: 2px solid rgba(1, 72, 245, 0.4);
+}
+
+.before-wrapper {
+  position: relative;
+}
+
+.down {
+  color: #dd4c3a;
+}
+
+.down::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 3.5px 0 3.5px;
+  border-color: #dd4c3a transparent transparent transparent;
+}
+
+.tor::before {
+  content: "";
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  width: 6px;
+  top: 4px;
+  left: -10px;
+}
+
+.up {
+  color: #2ed47a;
+}
+
+.up::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 3.5px 4px 3.5px;
+  border-color: transparent transparent #2ed47a transparent;
 }
 
 .main_wrapper {

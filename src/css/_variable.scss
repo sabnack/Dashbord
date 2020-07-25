@@ -1,19 +1,28 @@
 $blue: #0148f5;
 $lightBlue: #3d74f7;
 $mainBgColor: #e5e5e5;
+$borderColor: #ebeff2;
 $white: #ffff;
+$cardHheaderTextColor: #818e9b;
+$errorColor: #dd4c3a;
+$okColor: #2ed47a;
 $text-Poppins: "Poppins";
 $buttons: "share", "settings", "delete";
+$warningColor: #f18f1c;
+$noticeTextColor: #004bff;
+$triangle-down: 4px 3.5px 0 3.5px;
+$triangle-up: 0 3.5px 4px 3.5px;
+
 @mixin for-phone-portrait-up-small {
-    @media (max-width: 320px) {
-        @content;
-      }
+  @media (max-width: 320px) {
+    @content;
+  }
 }
 @mixin for-phone-portrait-up {
-    @media (max-width: 360px) {
-      @content;
-    }
+  @media (max-width: 360px) {
+    @content;
   }
+}
 
 @mixin for-tablet-not-phone {
   @media (min-width: 576px) and (max-width: 992px) {
@@ -63,6 +72,49 @@ $buttons: "share", "settings", "delete";
   }
 }
 
+@mixin triangle($top, $left, $direction) {
+  content: "";
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  @if ($direction == "up") {
+    border-width: $triangle-up;
+    border-color: transparent transparent $okColor transparent;
+  } @else {
+    border-width: $triangle-down;
+    border-color: $errorColor transparent transparent transparent;
+  }
+}
+
+@mixin textBlue {
+  .card_list {
+    span {
+      &:nth-child(3n + 2) {
+        color: $noticeTextColor;
+      }
+    }
+  }
+}
+
+@mixin torOpacity {
+  .card_list {
+    div {
+      @for $i from 0 through 3 {
+        &:nth-child(#{3*$i+1}) {
+          & > span {
+            &::before {
+              border: 2px solid rgba($blue, 1-$i/10*2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 %flex_center {
   display: flex;
   align-items: center;
@@ -84,4 +136,11 @@ textarea {
 * {
   box-sizing: border-box;
   text-transform: capitalize;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $borderColor;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }

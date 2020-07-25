@@ -1,10 +1,8 @@
-@import 'variable',
-'header',
-'about';
+@import "variable", "header", "about", "card";
 .main_wrapper {
-    width: 1100px;
-    margin: 0 auto;
-    @include for-desktop-up {
-        width: 90%;        
-    }
+  width: 1100px;
+  margin: 0 auto;
+  @include for-desktop-up {
+    width: 90%;
+  }
 }
