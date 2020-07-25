@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" id="fontawesome-css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        media="all" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="main_wrapper">
+            <div class="main_header">
+                <div class="title">dashboard</div>
+                <div class="filter">
+                    <select name="domains" required>
+                        <option value="0" selected>shared domains</option>
+                        <option value="1">domains</option>
+                        <option value="2">shared hosting</option>
+                    </select>
+                    <label for="domains">filter:</label>
+                </div>
+                <button>+</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main_wrapper">
+            <div class="about">
+                <div class="about_header">
+                    <div class="logo">
+                        <a href="https://cosmos.studio/" title="https://cosmos.studio/">
+                            <img alt="logo" src="images/logo/logo.png" width="25px">
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://kparser.com" title="https://kparser.com">https://kparser.com</a>
+                    </div>
+                    <div>
+                        <button data-name='share'></button>
+                    </div>
+                    <div>
+                        <button data-name='settings'></button>
+                    </div>
+                    <div>
+                        <button data-name='delete'></button>
+                    </div>
+                </div>
+                <div class="card_holder">
+                    <div class="card"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+.main_header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr 35px;
+    column-gap: 20px;
+    button {
+        background: $blue;
+        border-radius: 5px;
+        border: 1px solid $blue;
+        width: 35px;
+        height: 35px;
+        color: $white;
+        font-size: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 200;
+        &:hover {
+            background: $lightBlue;
+            border-color: $lightBlue;
+        }
+        &:focus {
+            outline: 0;
+        }
+        &:active {
+            background: darkblue;
+            border-color: darkblue;
+        }
+    }
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+    @extend %flex_center;
+}
+
+.filter {
+    @extend %flex_center;
+    flex-direction: row-reverse;
+    font-size: 12px;
+    select {
+        padding: 0 5px;
+        color: $blue;
+        position: relative;
+        margin-left: 10px;
+        width: 60%;
+        border: none;
+        -webkit-appearance: none;
+        background: #e5e5e5;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='grey' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: -3px;
+        outline: 0;
+    }
+}

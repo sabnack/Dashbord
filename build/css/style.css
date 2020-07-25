@@ -1,0 +1,156 @@
+.title, .filter, .about_header > div {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+body,
+button,
+select,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+.main_header {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 1fr 35px;
+      grid-template-columns: 4fr 1fr 35px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.main_header button {
+  background: #0148f5;
+  border-radius: 5px;
+  border: 1px solid #0148f5;
+  width: 35px;
+  height: 35px;
+  color: #ffff;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 200;
+}
+
+.main_header button:hover {
+  background: #3d74f7;
+  border-color: #3d74f7;
+}
+
+.main_header button:focus {
+  outline: 0;
+}
+
+.main_header button:active {
+  background: darkblue;
+  border-color: darkblue;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.filter {
+  flex-direction: row-reverse;
+  font-size: 12px;
+}
+
+.filter select {
+  padding: 0 5px;
+  color: #0148f5;
+  position: relative;
+  margin-left: 10px;
+  width: 60%;
+  border: none;
+  -webkit-appearance: none;
+  background: #e5e5e5;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='grey' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: -3px;
+  outline: 0;
+}
+
+.about {
+  width: 100%;
+  background-color: #ffff;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.about_header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25px 1fr 15px 15px 15px;
+      grid-template-columns: 25px 1fr 15px 15px 15px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.about_header > div > button {
+  background: #ffff;
+  border: none;
+  outline: 0;
+}
+
+.about_header > div > button[data-name="share"] {
+  background-image: url("../images/btn/share.svg");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about_header > div > button[data-name="settings"] {
+  background-image: url("../images/btn/settings.svg");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about_header > div > button[data-name="delete"] {
+  background-image: url("../images/btn/delete.svg");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about_header > div > button:hover {
+  -webkit-filter: sepia(70%);
+          filter: sepia(70%);
+}
+
+.about_header > div > button:active {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.link a {
+  text-decoration: none;
+  text-transform: initial;
+  color: black;
+  font-size: 15px;
+}
+
+.main_wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}

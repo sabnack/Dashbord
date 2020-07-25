@@ -1,0 +1,48 @@
+@mixin img($imgPath, $height, $width:$height) {
+    background-image: url("../images/btn/" + $imgPath + ".svg");
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about {
+    width: 100%;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 30px;
+    &_header {
+        display: grid;
+        grid-template-columns: 25px 1fr 15px 15px 15px;
+        column-gap: 10px;
+        >div {
+            @extend %flex_center;
+            >button {
+                background: $white;
+                border: none;
+                outline: 0;
+                @each $btn in $buttons {
+                    &[data-name="#{$btn}"] {
+                        @include img($btn,
+                        15px);
+                    }
+                }
+                &:hover {
+                    filter: sepia(70%);
+                }
+                &:active {
+                    filter: grayscale(1);
+                }
+            }
+        }
+    }
+}
+
+.link {
+    a {
+        text-decoration: none;
+        text-transform: initial;
+        color: black;
+        font-size: 15px;
+    }
+}

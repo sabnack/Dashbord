@@ -1,0 +1,30 @@
+$blue: #0148f5;
+$lightBlue: #3d74f7;
+$mainBgColor: #e5e5e5;
+$white: #ffff;
+$text-Poppins: "Poppins";
+$buttons: "share",
+"settings",
+"delete";
+%flex_center {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    background: $mainBgColor;
+}
+
+body,
+button,
+select,
+input,
+textarea {
+    font-family: $text-Poppins, sans-serif;
+    font-size: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
