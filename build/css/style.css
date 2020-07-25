@@ -112,6 +112,7 @@ textarea {
 
 .about {
   width: 100%;
+  min-width: 250px;
   background-color: #ffff;
   border-radius: 5px;
   padding: 30px;
@@ -120,10 +121,25 @@ textarea {
 .about_header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25px 1fr 15px 15px 15px;
-      grid-template-columns: 25px 1fr 15px 15px 15px;
+  -ms-grid-columns: 25px 1fr (15px)[3];
+      grid-template-columns: 25px 1fr repeat(3, 15px);
   -moz-column-gap: 10px;
        column-gap: 10px;
+}
+
+@media (max-width: 320px) {
+  .about_header {
+    -ms-grid-columns: (25px)[6];
+        grid-template-columns: repeat(6, 25px);
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    row-gap: 10px;
+  }
+  .about_header .link {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 7;
+  }
 }
 
 .about_header > div > button {

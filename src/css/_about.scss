@@ -8,12 +8,23 @@
 
 .about {
     width: 100%;
+    min-width: 250px;
     background-color: $white;
     border-radius: 5px;
     padding: 30px;
     &_header {
         display: grid;
-        grid-template-columns: 25px 1fr 15px 15px 15px;
+        grid-template-columns: 25px 1fr repeat(3, 15px);
+        @include for-phone-portrait-up-small{
+            grid-template-columns: repeat(6, 25px);
+            -moz-column-gap: 10px;
+            column-gap: 10px;
+            row-gap: 10px;
+            .link{
+                grid-column-start: 2;
+                grid-column-end: 7;
+            }
+        }
         column-gap: 10px;
         >div {
             @extend %flex_center;
