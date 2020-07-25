@@ -3,16 +3,69 @@ $lightBlue: #3d74f7;
 $mainBgColor: #e5e5e5;
 $white: #ffff;
 $text-Poppins: "Poppins";
-$buttons: "share",
-"settings",
-"delete";
+$buttons: "share", "settings", "delete";
+
+@mixin for-phone-portrait-up {
+    @media (max-width: 360px) {
+      @content;
+    }
+  }
+
+@mixin for-tablet-not-phone {
+  @media (min-width: 576px) and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-phone {
+  @media (max-width: 815px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-header-categories-up {
+  @media (max-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
+
 %flex_center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 body {
-    background: $mainBgColor;
+  background: $mainBgColor;
 }
 
 body,
@@ -20,11 +73,11 @@ button,
 select,
 input,
 textarea {
-    font-family: $text-Poppins, sans-serif;
-    font-size: 12px;
+  font-family: $text-Poppins, sans-serif;
+  font-size: 12px;
 }
 
 * {
-    box-sizing: border-box;
-    text-transform: capitalize;
+  box-sizing: border-box;
+  text-transform: capitalize;
 }
