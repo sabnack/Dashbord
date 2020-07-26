@@ -18,6 +18,7 @@ input,
 textarea {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
+  color: #334D6E;
 }
 
 * {
@@ -30,7 +31,6 @@ hr {
   border: none;
   border-top: 1px solid #ebeff2;
   margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 .main_header {
@@ -215,6 +215,8 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card_header {
@@ -235,12 +237,15 @@ hr {
 }
 
 .card {
+  margin-top: 25px;
+  max-width: 250px;
   width: 100%;
-  border-right: 1px solid #ebeff2;
+  border-left: 1px solid #ebeff2;
   padding: 0 35px;
 }
 
 .card:first-child {
+  border-left: none;
   padding-left: 0px;
 }
 
@@ -307,9 +312,54 @@ hr {
   border: 2px solid rgba(1, 72, 245, 0.4);
 }
 
-.card:nth-child(4) {
-  border-right: none;
-  padding-right: 0;
+@media (max-width: 583px) {
+  .card:nth-child(2) {
+    padding-left: 0;
+    padding-right: 35px;
+    border-left: none;
+  }
+}
+
+.card:nth-child(3) .card_list {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.card:nth-child(3) .card_conteiner > span {
+  font-size: 10px;
+  color: #818e9b;
+}
+
+.card:nth-child(3) .card_list div:nth-child(1) > span::before {
+  border: 3px solid #2ed47a;
+}
+
+.card:nth-child(3) .card_list div:nth-child(2) > span::before {
+  border: 3px solid #f18f1c;
+}
+
+.card:nth-child(3) .card_list div:nth-child(3) > span::before {
+  border: 3px solid #2ed47a;
+}
+
+.card:nth-child(3) .card_list div:nth-child(4) > span::before {
+  border: 3px solid #f18f1c;
+}
+
+@media (max-width: 583px) {
+  .card:nth-child(3) {
+    padding-left: 0;
+    padding-right: 35px;
+    border-left: none;
+  }
+}
+
+@media (min-width: 584px) and (max-width: 843px) {
+  .card:nth-child(3) {
+    padding-left: 0;
+    padding-right: 35px;
+    border-left: none;
+  }
 }
 
 .card:nth-child(4) .card_list span:nth-child(3n + 2) {
@@ -330,6 +380,34 @@ hr {
 
 .card:nth-child(4) .card_list div:nth-child(10) > span::before {
   border: 2px solid rgba(1, 72, 245, 0.4);
+}
+
+.card:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 583px) {
+  .card:last-child {
+    padding-left: 0;
+    padding-right: 35px;
+    border-left: none;
+  }
+}
+
+@media (min-width: 584px) and (max-width: 843px) {
+  .card:last-child {
+    padding-left: 35px;
+    padding-right: 0px;
+    border-left: 1px solid #ebeff2;
+  }
+}
+
+@media (min-width: 844px) and (max-width: 1100px) {
+  .card:last-child {
+    padding-left: 0;
+    padding-right: 35px;
+    border-left: none;
+  }
 }
 
 .before-wrapper {
@@ -387,7 +465,7 @@ hr {
 
 @media (max-width: 1200px) {
   .main_wrapper {
-    width: 90%;
+    width: 96%;
   }
 }
 /*# sourceMappingURL=style.css.map */

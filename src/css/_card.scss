@@ -1,5 +1,6 @@
 .card_holder {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card_header {
@@ -18,10 +19,13 @@
 }
 
 .card {
-    width: 100%;
-  border-right: 1px solid $borderColor;
-  padding: 0 35px;
+  margin-top: 25px;
+  max-width: 250px;
+  width: 100%;
+  @include verticalBorder;
+  padding: 0 35px;  
   &:first-child {
+    border-left: none;
     padding-left: 0px;
     .score {
       position: relative;
@@ -58,13 +62,48 @@
   &:nth-child(2) {
     @include textBlue;
     @include torOpacity;
+    @include dashbord1col {
+        @include borderNone;
+      }
+  }
+  &:nth-child(3) {
+    .card_list {
+      grid-template-columns: 1fr;
+    }
+    .card_conteiner {
+      > span {
+        font-size: 10px;
+        color: #818e9b;
+      }
+    }
+    @include circle;
+    @include dashbord1col {
+        @include borderNone;
+      }
+    @include dashbord2col {
+      @include borderNone;
+    }
   }
   &:nth-child(4) {
-      border-right: none;
-      padding-right: 0;
     @include textBlue;
     @include torOpacity;
+    
   }
+  &:last-child {  
+    padding-right: 0;
+    @include dashbord1col {
+        @include borderNone;
+      }
+    @include dashbord2col {
+      padding-left: 35px;
+      padding-right: 0px;
+      @include verticalBorder;
+    }
+    @include dashbord3col {
+        @include borderNone;
+      }
+  }
+  
 }
 
 .before-wrapper {
@@ -83,7 +122,6 @@
     content: "";
     height: 6px;
     border-radius: 50%;
-
     position: absolute;
     box-sizing: border-box;
     width: 6px;

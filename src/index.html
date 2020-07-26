@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -16,6 +17,70 @@
 <body>
     //= templates/header.html
     //= templates/main.html
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var lineChartData = {
+			labels: ['', '', '', '', '', '', '', '', '', ''],
+			datasets: [{				
+				data: [3,5,10,12,10,8,5,9,18,16],
+				backgroundColor: ['rgba(165,191,255, 0.5)'],
+                    borderColor: ['rgb(0,75,255)'],
+                    borderWidth: 1
+			}, {
+                data: [3,4,7,5,8,10,12,11,10,8],
+                backgroundColor: ['rgba(165,191,255, 0.8)'],	
+                borderColor: ['rgba(0,75,255, 0.7)'],
+                borderWidth: 1
+			}]
+		};
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: lineChartData,
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        display: false,
+                    }],
+                    yAxes: [{
+                        display: false,
+                    }]
+                },
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx2, {
+            type: 'line',
+            data: lineChartData,
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        display: false,
+                    }],
+                    yAxes: [{
+                        display: false,
+                    }]
+                },
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
