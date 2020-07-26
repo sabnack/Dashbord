@@ -24,36 +24,6 @@ $color:red;
   }
 }
 
-@mixin for-tablet-not-phone {
-  @media (min-width: 576px) and (max-width: 992px) {
-    @content;
-  }
-}
-
-@mixin for-phone-only {
-  @media (max-width: 576px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-phone {
-  @media (max-width: 815px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-portrait-up {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (max-width: 992px) {
-    @content;
-  }
-}
-
 @mixin dashbord1col {
     @media (max-width: 583px) {
       @content;
@@ -76,17 +46,6 @@ $color:red;
   }
 }
 
-// @mixin for-header-categories-up {
-//   @media (max-width: 1250px) {
-//     @content;
-//   }
-// }
-
-// @mixin for-big-desktop-up {
-//   @media (max-width: 1800px) {
-//     @content;
-//   }
-// }
 @mixin verticalBorder{
     border-left: 1px solid $borderColor;
 }
